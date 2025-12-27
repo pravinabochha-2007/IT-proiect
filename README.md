@@ -33,3 +33,41 @@
 
 </body>
 </html># IT-proiect
+CREATE DATABASE egov_portal;
+
+USE egov_portal;
+
+CREATE TABLE citizen_queries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    service VARCHAR(100),
+    message TEXT,
+    submitted_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+import java.util.Scanner;
+
+public class Egov {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== E-GOVERNANCE QUERY SYSTEM ===");
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter required service: ");
+        String service = sc.nextLine();
+
+        System.out.print("Enter your message: ");
+        String message = sc.nextLine();
+
+        System.out.println("\n----- QUERY RECEIVED -----");
+        System.out.println("Name       : " + name);
+        System.out.println("Service    : " + service);
+        System.out.println("Message    : " + message);
+        System.out.println("---------------------------");
+
+        System.out.println("\nYour request has been submitted successfully!");
+    }
+}
+
